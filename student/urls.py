@@ -1,5 +1,5 @@
 from django.urls import path
-from student.controllers.dashboard_controller import DashboardView,registerPage,find_PasswordChangeView
+from student.controllers.dashboard_controller import DashboardView,registerPage,PasswordChangeView
 from student.controllers.result_controller import declare_result_view,result_update_view,result_delete_view,DeclareResultListView,validate_data,setup_update_view
 from student.controllers.class_controller import StudentClassCreateView,StudentClassUpdateView,StudentClassDeleteView,StudentClassListView
 from student.controllers.student_controller import StudentListView,StudentCreateView,StudentUpdateView,StudentDeleteView, searchStudents
