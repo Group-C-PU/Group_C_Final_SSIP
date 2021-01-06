@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+
+{% block main_page_title %}
+    Holiday List 2021
+{% endblock main_page_title %}
+    
+
+{% block main_page_content %}
+   
+    {% for e in datas %}
+        <li><strong>{{e.date}}</strong>    {{e.name}}</li>
+    {% endfor %}
+    <!-- /.row -->
+{% endblock main_page_content %}
+
+{% block javascript_code %}
+    
+{% endblock javascript_code %}
+    

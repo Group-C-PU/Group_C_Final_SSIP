@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+
+
+{% block main_page_title %}
+    Search Student
+{% endblock main_page_title %}
+    
+
+{% block main_page_content %}
+<div class="col-12">
+    <form method="post" action="">
+        {% csrf_token %}
+        <div class="col-sm-6">
+            <div class="form-inline"> 
+                <input name="student_name" type="text"​> 
+                <button class="btn btn-primary" type="submit">Search</button> 
+            </div>
+        </div>
+    </form>
+        <div class="row">
+        <div class="col-sm-12">
+            <table id="example" class="display table table-striped table-bordered dataTable" cellspacing="0" width="100%"
+                role="grid" aria-describedby="example_info" style="width: 100%;">
+                <thead>
+                    <tr role="row">
+                        <div class="row">
+                        <div class="col-sm-12">
+                            <table id="example" class="display table table-striped table-bordered dataTable" cellspacing="0" width="100%"
+                                role="grid" aria-describedby="example_info" style="width: 100%;">
+                                <thead>
+                                    <tr role="row">
+                                        <th class="sorting" tabindex="0" aria-controls="example" rowspan="1" colspan="1" aria-label="{{ field }}: activate to sort column ascending"
+                                            style="width: auto;">ID</th>
+                                        <th class="sorting" tabindex="0" aria-controls="example" rowspan="1" colspan="1" aria-label="{{ field }}: activate to sort column ascending"
+                                            style="width: auto;">Name</th>
+                                        <th class="sorting" tabindex="0" aria-controls="example" rowspan="1" colspan="1" aria-label="{{ field }}: activate to sort column ascending"
+                                            style="width: auto;">Class</th>
+                                        <th class="sorting" tabindex="0" aria-controls="example" rowspan="1" colspan="1" aria-label="{{ field }}: activate to sort column ascending"
+                                            style="width: auto;">Date of Birth</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {% for e in students %}
+                                    <tr role="row" class="odd">
+                                        <td>{{ e.student_ID }}</td>
+                                        <td>{{ e.student_name }}</td>
+                                        <td>{{ e.student_class }}</td>
+                                        <td>{{ e.student_date_of_birth }}</td>
+                                    </tr>
+                                    {% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    </tr>
+                </thead>
+            </table>
+{% endblock main_page_content %}
+
+{% block javascript_code %}
+    
+{% endblock javascript_code %}
+
+
